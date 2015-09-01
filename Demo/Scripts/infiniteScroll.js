@@ -26,7 +26,7 @@ function loadMoreToInfiniteScrollUl(loadMoreRowsUrl) {
             url: loadMoreRowsUrl,
             data: "pageNum=" + page,
             success: function (data, textstatus) {
-                if (data != '') {
+                if (data.trim() != '') {
                     $("ul.infinite-scroll").append(data);
                 }
                 else {
@@ -52,7 +52,7 @@ function loadMoreToInfiniteScrollTable(loadMoreRowsUrl) {
             url: loadMoreRowsUrl,
             data: "pageNum=" + page,
             success: function (data, textstatus) {
-                if (data != '') {
+                if (data.trim() != '') {
                     $("table.infinite-scroll > tbody").append(data);
                     $("table.infinite-scroll > tbody > tr:even").addClass("alt-row-class");
                     $("table.infinite-scroll > tbody > tr:odd").removeClass("alt-row-class");
